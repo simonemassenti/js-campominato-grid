@@ -9,11 +9,11 @@ btnElem.addEventListener("click", function () {
     
     //Take the number of cells
     numCell = getCellNumber();
-    //Gets the difficulty class based on the number of cells
-    let classDif = getDifficultyClass(numCell);
+    //Gets the level class based on the number of cells
+    let classLevel = getLevelClass(numCell);
     
     //Generates the cells
-    generateCells(numCell, classDif, gridElem);
+    generateCells(numCell, classLevel, gridElem);
 });
 
 /*************************************************/
@@ -24,7 +24,7 @@ btnElem.addEventListener("click", function () {
  * @returns {Number}
  */
 function getCellNumber() {
-    const numCell = document.querySelector("#dif");
+    const numCell = document.querySelector("#lev");
     return parseInt(numCell.value);
 }
 
@@ -43,7 +43,7 @@ function setColorgetNumber() {
 * @param {number}
 * @retruns {String}
 */
-function getDifficultyClass(num) {
+function getLevelClass(num) {
     switch (num) {
         case 100:
             return "easy";
@@ -57,15 +57,15 @@ function getDifficultyClass(num) {
 }
 
 /** 
- * Description: this function generate a number of cells passed by parameter with the difficulty class and the cell class. Add an eventListener and than appends it in the HTML element grid 
+ * Description: this function generate a number of cells passed by parameter with the level class and the cell class. Add an eventListener and than appends it in the HTML element grid 
  * @params {number, String, HTML element}
  * 
  */
-function generateCells(number, classCell, grid) {
+function generateCells(number, level, grid) {
     for (let i = 0; i < number; i++) {
         let cellElem = document.createElement("div");
         cellElem.classList.add("cell");
-        cellElem.classList.add(classCell);
+        cellElem.classList.add(level);
         cellElem.innerText = i + 1;
         cellElem.addEventListener("click", setColorgetNumber);
         grid.append(cellElem);
