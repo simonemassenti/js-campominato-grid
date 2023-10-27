@@ -31,7 +31,6 @@ button {
 
 .cell {
     border: 1px solid black;
-    width: calc(100% / 10);
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
@@ -40,4 +39,20 @@ button {
 
 .lightblue {
     background-color: lightblue;
+}
+
+select {
+    margin-left: 10px;
+}
+
+.easy {
+    width: calc(100% / 10);
+}
+
+.medium {
+    width: calc(100% / 9);
+}
+
+.hard {
+    width: calc(100% / 7);
 }
